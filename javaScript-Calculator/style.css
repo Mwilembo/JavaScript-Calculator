@@ -1,15 +1,18 @@
+/* styles the before and after elements of the whole html code */
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: gotham rounded, sans-serif;
     font-weight: normal;
 }
 
+/* styles the body of html */
 body{
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
 }
 
+/* styles the whole div grid and creates the struction of the calculator */
 .calculator-grid {
     display: grid;
     justify-content: center;
@@ -19,3 +22,48 @@ body{
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
+/* styles the size / outlines / border and background color of the numbers */
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #ffffff;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* styles what happens when you hover over the numbers */
+.calculator-grid > button:hover {
+    background-color: #a9a9a9;
+}
+
+/* styles the AC button and the = */
+.span-two {
+    grid-column: span 2;
+    color: red;
+    background-color: rgba(139, 0, 139, 0.8);
+}
+
+/* styles the output nox that does the calculation of the two numbers */
+.output {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Styles the top number in the calculator */
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+/* Styles the bottle number in the Calculator */
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
