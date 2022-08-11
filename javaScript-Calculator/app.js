@@ -1,0 +1,77 @@
+class Calculator {
+    constructor(dataPreviousOperand, dataCurrentOperand){
+        this.previousOperandTextElement  = previousOperandTextElement ;
+        this.currentOperandTextElement  = currentOperandTextElement ;
+        this.clear();
+    }
+}
+
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+
+
+
+function clear() {
+    this.currentOperand = '';
+    this.previousOperand = '';
+    this.operation = undefined;
+}
+
+function delete(){
+
+}
+
+function appendNumber(number){
+    if(number === '.' && this.currentOperand.includes('.'));
+    return this.currentOperand = this.currentOperand.toString() + number.toString();
+}
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+    });
+});
+
+function chooseOperation(operation){
+    
+    if(this.currentOperand === '') return 
+    if (this.previousOperand !== ''){
+        this.compute();
+    }
+    this.operation = operation;
+    this.previousOperand = this.currentOperand;
+    this.currentOperand = '';
+}
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText);
+        calculator.updateDisplay();
+    });
+});
+
+function compute(){
+
+}
+
+equalsButton.addEventListener('click', button=>{
+    calculator.compute();
+    calculator.updateDisplay();
+});
+
+function updateDisplay(){
+    
+    this.currentOperandTextElement.innerText = this.currentOperand;
+}
+
+
+
+
+
+const numberButtons = document.querySelectorAll('[data-number]');
+const operationButtons = document.querySelectorAll('[data-operation]');
+const equalsButton = document.querySelector('[data-equals]');
+const deleteButton = document.querySelector('[data-all-clear]');
+const allClearButton = document.querySelector('[data-delete]');
+const previousOperandTextElement  = document.querySelector('[data-previous-operand]')
+const currentOperandTextElement  = document.querySelector('[data-current-operand');

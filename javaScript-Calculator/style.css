@@ -12,7 +12,7 @@ body{
     background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
 }
 
-/* styles the whole div grid and creates the struction of the calculator */
+/* styles the whole div grid and creates the structure of the calculator */
 .calculator-grid {
     display: grid;
     justify-content: center;
